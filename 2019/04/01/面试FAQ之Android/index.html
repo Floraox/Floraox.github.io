@@ -3,19 +3,26 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Archives: 2019 | Flora Recoding BLog</title>
+  <title>面试FAQ之Android相关 | Flora Recoding BLog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
+  <meta name="keywords" content="面试整理安卓">
   
   
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Flora Recoding BLog">
-<meta property="og:url" content="http://yoursite.com/archives/2019/index.html">
+  
+  <meta name="description" content="Activity生命周期onCreate()onStart()onResume()onPause()onStop()onDestroy() Activity的4个基本状态“栈进管理”">
+<meta name="keywords" content="面试整理,安卓">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试FAQ之Android相关">
+<meta property="og:url" content="http://yoursite.com/2019/04/01/面试FAQ之Android/index.html">
 <meta property="og:site_name" content="Flora Recoding BLog">
+<meta property="og:description" content="Activity生命周期onCreate()onStart()onResume()onPause()onStop()onDestroy() Activity的4个基本状态“栈进管理”">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-03T07:26:08.108Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flora Recoding BLog">
+<meta name="twitter:title" content="面试FAQ之Android相关">
+<meta name="twitter:description" content="Activity生命周期onCreate()onStart()onResume()onPause()onStop()onDestroy() Activity的4个基本状态“栈进管理”">
   
     <link rel="alternate" href="/atom.xml" title="Flora Recoding BLog" type="application/atom+xml">
   
@@ -48,7 +55,7 @@
 </html>
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
 
   
@@ -97,231 +104,125 @@
             
       <div id="content" class="outer">
         
-          <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>There are 2 posts in total till now.</span></blockquote>
-
-
-
-
-
-	<!-- 分页显示 -->
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2019" class="archive-year">2019</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2019/04/01/Welcome to my blog/" class="archive-article-date">
-		  <time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished">Apr 01, 2019</time>
-	  </a>
-      
+          <section id="main" style="float:none;"><article id="post-面试FAQ之Android" style="width: 66%; float:left;" class="article article-type-post" itemscope itemprop="blogPost">
+  <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+    
+    
+      <header class="article-header">
+        
   
     <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/Welcome to my blog/">Welcome to my blog</a>
+      面试FAQ之Android相关
     </h1>
   
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-
-      <a href="/2019/04/01/面试FAQ之Android/" class="archive-article-date">
-		  <time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished">Apr 01, 2019</time>
-	  </a>
+      </header>
+    
+    <div class="article-meta">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2019/04/01/面试FAQ之Android/">面试FAQ之Android相关</a>
-    </h1>
-  
+	<a href="/2019/04/01/面试FAQ之Android/" class="article-date">
+	  <time datetime="2019-03-31T16:00:00.000Z" itemprop="datePublished">April 1, 2019</time>
+	</a>
 
-    </header>
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/cs/">cs</a>
+ 
+      
+	<span id="busuanzi_container_page_pv">
+	  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+	</span>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Activity生命周期"><a href="#Activity生命周期" class="headerlink" title="Activity生命周期"></a>Activity生命周期</h2><p>onCreate()<br>onStart()<br>onResume()<br>onPause()<br>onStop()<br>onDestroy()</p>
+<h2 id="Activity的4个基本状态"><a href="#Activity的4个基本状态" class="headerlink" title="Activity的4个基本状态"></a>Activity的4个基本状态</h2><p>“栈进管理”<br><a id="more"></a></p>
+<ul>
+<li>running（栈顶）  onCreate() -&gt;onStart() -&gt; onResume()</li>
+<li>paused（失焦但对用户可见）<br>运行状态到暂停状态：onResume() -&gt; onPuased()。<br>暂停状态恢复至运行：onPuased() -&gt; onResume()。</li>
+<li>stopped（对用户不可见）<br>暂停状态到停止状态：onPuased() -&gt; onStop()。<br>停止状态恢复至运行：onStop() -&gt; onRestart() -&gt; onStart() -&gt; onResume()。</li>
+<li>销毁（人为或系统销毁，如低内存）(1)由用户操作导致,则执行：onStop() -&gt; onDestroy()。(2)由系统自动强制执行，则该Activity被强行结束。</li>
+</ul>
+<p>finish()方法:1.栈中移除activity 2.调用此activity的onDestroy()</p>
+<h2 id="Android的4大基本组件"><a href="#Android的4大基本组件" class="headerlink" title="Android的4大基本组件"></a>Android的4大基本组件</h2><p> Activity、Service、Content Provider、Broadcast Receiver  </p>
+<ul>
+<li>Activity：活动视图。一个负责与用户交互的显示界面的组件。</li>
+<li>Service：服务。一个没有界面、运行在后台的服务。</li>
+<li>Content Provider：内容提供者。一个应用程序可以使用Content Provider来共享自己的数据，另一个应用想要使用该应用提供的数据时，可以通过ContentResolver来访问。</li>
+<li>Broadcast Receiver：广播接收者。广播消息接收器，监听的事件源是Android应用中的其他组件。</li>
+</ul>
+
+      
+    </div>
+    <footer class="entry-meta entry-footer">
+      
+	<span class="ico-folder"></span>
+    <a class="article-category-link" href="/categories/cs/">cs</a>
+
+      
+  <span class="ico-tags"></span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安卓/">安卓</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试整理/">面试整理</a></li></ul>
+
+      
+        
+	<div id="comment">
+	
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2019/04/01/面试FAQ之Android/" data-title="面试FAQ之Android相关" data-url="http://yoursite.com/2019/04/01/面试FAQ之Android/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"iTimeTraveler"};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0] 
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+	
+	</div>
+	<link rel="stylesheet" href="/css/comment.css">
+
+
+      
+    </footer>
+    <hr class="entry-footer-hr">
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/01/Welcome to my blog/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Welcome to my blog
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
 </article>
-	
-	
-		</div></section>
-	
 
-	<!-- 页数指示器 -->
-	
+<!-- Table of Contents -->
 
-
-
-</div></section>
-          <aside id="sidebar">
-  
-    <div style="margin: 20px 0;">
-	<div id="search-form-wrap">
-
-    <form class="search-form">
-        <label style="width: 72%;">
-            <span class="screen-reader-text">Search for:</span>
-            <input type="search" class="search-field" style="height: 36px; width: 100%;" placeholder=" Search…" value name="s" title="Search for:">
-        </label>
-        <input type="submit" class="search-form-submit" value="Search">
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something...">
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
-
-</div>
-</div>
-  
+  <aside id="sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Connect With Us</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-   			<li><a href="https://github.com/Floraox" title="Github"><i class="fa fa-github" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="https://instagram.com/flora_ox211" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> 
-
-   		
-   			<li><a href="mailto:fyx250502008@163.com" title="envelope"><i class="fa fa-envelope" aria-hidden="true"></i></a></li> 
-
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
+      <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity生命周期"><span class="nav-number">1.</span> <span class="nav-text">Activity生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Activity的4个基本状态"><span class="nav-number">2.</span> <span class="nav-text">Activity的4个基本状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Android的4大基本组件"><span class="nav-number">3.</span> <span class="nav-text">Android的4大基本组件</span></a></li></ol>
     
-  <div class="widget_athemes_tabs">
-    <ul id="widget-tab" class="clearfix widget-tab-nav">
-      <li class="active"><a>Recent Posts</a></li>
-    </ul>
-    <div class="widget">
-      <ul>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/04/01/Welcome to my blog/">Welcome to my blog</a></h6>
-              <span>April 1, 2019</span>
-            </div>
-
-          </li>
-        
-          <li class="clearfix">
-
-            
-              <div class="widget-entry-summary" style="margin: 0;">
-            
-
-              <h6 style="margin: 0;"><a href="/2019/04/01/面试FAQ之Android/">面试FAQ之Android相关</a></h6>
-              <span>April 1, 2019</span>
-            </div>
-
-          </li>
-        
-      </ul>
     </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/cs/">cs</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">life</a><span class="category-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/安卓/">安卓</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试整理/">面试整理</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/安卓/" style="font-size: 10px;">安卓</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a> <a href="/tags/面试整理/" style="font-size: 10px;">面试整理</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-</aside>
+  </aside>
+</section>
         
       </div>
 
